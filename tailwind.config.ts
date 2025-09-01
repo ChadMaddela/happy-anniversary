@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				book: {
+					leather: 'hsl(var(--book-leather))',
+					'leather-dark': 'hsl(var(--book-leather-dark))',
+					paper: 'hsl(var(--book-paper))',
+					shadow: 'hsl(var(--book-shadow))',
+					spine: 'hsl(var(--book-spine))',
+					gold: 'hsl(var(--book-gold))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +92,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'page-flip': {
+					'0%': { transform: 'rotateY(0deg)' },
+					'100%': { transform: 'rotateY(-180deg)' }
+				},
+				'scroll-reel': {
+					'0%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(-100%)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'page-flip': 'page-flip 0.8s ease-in-out',
+				'scroll-reel': 'scroll-reel 30s linear infinite',
+				'fade-in': 'fade-in 0.5s ease-out'
+			},
+			backgroundImage: {
+				'gradient-book': 'var(--gradient-book)',
+				'gradient-paper': 'var(--gradient-paper)',
+				'gradient-gold': 'var(--gradient-gold)'
 			}
 		}
 	},
