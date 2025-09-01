@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -52,6 +52,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
   const [answers, setAnswers] = useState<(0 | 1)[]>([]);
   const [showResult, setShowResult] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<0 | 1 | null>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleAnswer = (answerIndex: 0 | 1) => {
     setSelectedAnswer(answerIndex);
@@ -69,6 +70,12 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
           answer === questions[index].correct
         );
         setShowResult(true);
+        
+        // Play music if all correct
+        if (allCorrect && audioRef.current) {
+          audioRef.current.play().catch(console.error);
+        }
+        
         setTimeout(() => onComplete(allCorrect), 2000);
       }
     }, 800);
@@ -129,6 +136,15 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       animate={{ opacity: 1 }}
       className="min-h-screen flex items-center justify-center bg-background p-4"
     >
+      {/* Audio element - Add your music file to public folder */}
+      <audio 
+        ref={audioRef} 
+        preload="auto"
+        loop
+      >
+        <source src="/music/celebration-music.mp3" type="audio/mpeg" />
+        {/* Add your music file here - replace with path to your Ben&Ben song */}
+      </audio>
       <div className="w-full max-w-2xl">
         {/* Progress Bar */}
         <div className="mb-8">
