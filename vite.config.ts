@@ -20,6 +20,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
   assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.PNG', '**/*.JPEG'],
-
-  base: "/happy-anniversary/",
 }));
