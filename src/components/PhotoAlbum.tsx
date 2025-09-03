@@ -4,26 +4,26 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Import photos
-import photo1 from '@/assets/photo1.png';
-import photo2 from '@/assets/photo2.jpg';
-import photo3 from '@/assets/photo3.jpg';
-import photo4 from '@/assets/photo4.jpg';
-import photo5 from '@/assets/photo5.jpg';
-import photo6 from '@/assets/photo6.jpeg';
-import photo7 from '@/assets/photo7.jpg';
-import photo8 from '@/assets/photo8.jpg';
-import photo9 from '@/assets/photo9.jpg';
-import photo10 from '@/assets/photo10.jpg';
-import photo11 from '@/assets/photo11.jpg';
-import photo12 from '@/assets/photo12.jpg';
-import photo13 from '@/assets/photo13.jpg';
-import photo14 from '@/assets/photo14.jpg';
-import photo15 from '@/assets/photo15.jpg';
-import photo16 from '@/assets/photo16.jpg';
-import photo17 from '@/assets/photo17.jpg';
-import photo18 from '@/assets/photo18.jpg';
-import photo19 from '@/assets/photo19.jpg';
-import photo20 from '@/assets/photo20.jpg';
+import photo1 from '../assets/photo1.jpg';
+import photo2 from '../assets/photo2.jpg';
+import photo3 from '../assets/photo3.jpg';
+import photo4 from '../assets/photo4.jpg';
+import photo5 from '../assets/photo5.jpg';
+import photo6 from '../assets/photo6.jpg';
+import photo7 from '../assets/photo7.jpg';
+import photo8 from '../assets/photo8.jpg';
+import photo9 from '../assets/photo9.jpg';
+import photo10 from '../assets/photo10.jpg';
+import photo11 from '../assets/photo11.jpg';
+import photo12 from '../assets/photo12.jpg';
+import photo13 from '../assets/photo13.jpg';
+import photo14 from '../assets/photo14.jpg';
+import photo15 from '../assets/photo15.jpg';
+import photo16 from '../assets/photo16.jpg';
+import photo17 from '../assets/photo17.jpg';
+import photo18 from '../assets/photo18.jpg';
+import photo19 from '../assets/photo19.jpg';
+import photo20 from '../assets/photo20.jpg';
 
 interface Photo {
   id: number;
