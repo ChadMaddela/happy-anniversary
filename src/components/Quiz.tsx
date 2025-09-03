@@ -125,7 +125,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
                     Di mo na ko love T.T
                   </h2>
                   <p className="text-muted-foreground">
-                    Hmp!
+                    You need all answers correct to proceed. hmp
                   </p>
                 </>
               )}
