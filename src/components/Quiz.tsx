@@ -8,38 +8,44 @@ interface QuizQuestion {
   question: string;
   options: [string, string];
   correct: 0 | 1;
+  description: string;
 }
 
 const questions: QuizQuestion[] = [
   {
     id: 1,
-    question: "What is the most abundant gas in Earth's atmosphere?",
-    options: ["Oxygen", "Nitrogen"],
-    correct: 1
+    question: "What is my nickname",
+    options: ["Baby Love", "Baby mo"],
+    correct: 0,
+    description: "Sana alam mo to :( !"
   },
   {
     id: 2,
-    question: "Which planet is known as the Red Planet?",
-    options: ["Mars", "Venus"],
-    correct: 0
+    question: "Where did we first met?",
+    options: ["ADF", "Somewhere down the road"],
+    correct: 0,
+    description: "Saan nga ba?"
   },
   {
     id: 3,
-    question: "What is the largest mammal in the world?",
-    options: ["Elephant", "Blue Whale"],
-    correct: 1
+    question: "When did we first met?",
+    options: ["August 21", "September 4"],
+    correct: 1,
+    description: "Kapag eto talaga mali"
   },
   {
     id: 4,
-    question: "In which year did the Berlin Wall fall?",
-    options: ["1989", "1991"],
-    correct: 0
+    question: "First kiss",
+    options: ["Hardin", "Mt. Ulap"],
+    correct: 1,
+    description: "Nako po feeling ko malilito"
   },
   {
     id: 5,
-    question: "What is the chemical symbol for gold?",
-    options: ["Go", "Au"],
-    correct: 1
+    question: "How much do you Love me?",
+    options: ["Humigit kumulang di mabilang", "Kulangot sa pader"],
+    correct: 0,
+    description: "Yung totoo!"
   }
 ];
 
@@ -109,17 +115,17 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
                     Congratulations!
                   </h2>
                   <p className="text-muted-foreground">
-                    Perfect score! The photo album awaits...
+                    I love you ˵˘ ³˘˵
                   </p>
                 </>
               ) : (
                 <>
                   <div className="text-6xl mb-4">📚</div>
                   <h2 className="text-2xl font-bold text-foreground mb-2">
-                    Study More!
+                    Di mo na ko love T.T
                   </h2>
                   <p className="text-muted-foreground">
-                    You need all answers correct to proceed.
+                    Hmp!
                   </p>
                 </>
               )}
@@ -140,9 +146,10 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       <audio 
         ref={audioRef} 
         preload="auto"
+        autoPlay
         loop
       >
-        <source src="/music/celebration-music.mp3" type="audio/mpeg" />
+        <source src="/public/music.mp3" type="audio/mpeg" />
         {/* Add your music file here - replace with path to your Ben&Ben song */}
       </audio>
       <div className="w-full max-w-2xl">
@@ -181,7 +188,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
                   {currentQ.question}
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  Choose the correct answer
+                  {currentQ.description}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
